@@ -35,6 +35,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -411,7 +412,7 @@ public class RegionConfigurationTest {
 
     @Test
     public void testStoreLoadPersistedConfig() throws Exception {
-        File f = File.createTempFile("testStorePersistedConfig", ".tmp");
+        File f = Files.createTempFile("testStorePersistedConfig", ".tmp").toFile();
 
         try {
             Bundle bundle = Mockito.mock(Bundle.class);
